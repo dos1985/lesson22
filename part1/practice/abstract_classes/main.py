@@ -39,7 +39,116 @@
 
 # код должен выполняться не выбрасывая исключений
 
-# TODO напишите Ваш код здесь
+from abc import ABC, abstractmethod
+
+class Transport(ABC):
+    @abstractmethod
+    def start_engine(self):
+        pass
+
+    @abstractmethod
+    def stop_engine(self):
+        pass
+
+    @abstractmethod
+    def move(self):
+        pass
+
+    @abstractmethod
+    def stop(self):
+        pass
+
+
+class Boat(Transport):
+    def start_engine(self):
+        print("Двигатель катера запущен")
+
+    def stop_engine(self):
+        print("Двигатель катера остановлен")
+
+    def move(self):
+        print("Катер движется по воде")
+
+    def stop(self):
+        print("Катер остановился")
+
+
+class Car(Transport):
+    def start_engine(self):
+        print("Двигатель автомобиля запущен")
+
+    def stop_engine(self):
+        print("Двигатель автомобиля остановлен")
+
+    def move(self):
+        print("Автомобиль движется по дороге")
+
+    def stop(self):
+        print("Автомобиль остановился")
+
+
+class Electroscooter(Transport):
+    def start_engine(self):
+        print("Двигатель электросамоката запущен")
+
+    def stop_engine(self):
+        print("Двигатель электросамоката остановлен")
+
+    def move(self):
+        print("Электросамокат движется по тротуару")
+
+    def stop(self):
+        print("Электросамокат остановился")
+
+
+class Person:
+    def use_transport(self, transport_obj):
+        transport_obj.start_engine()
+        transport_obj.move()
+        transport_obj.stop()
+        transport_obj.stop_engine()
+
+
+class Boat(Transport):
+    def start_engine(self):
+        print("Катер громко затарахтел")
+
+    def stop_engine(self):
+        print("Двигатель катера чихнул напоследок и заглох")
+
+    def move(self):
+        print("Катер быстро набирает скорость")
+
+    def stop(self):
+        print("Катер остановился")
+
+
+class Car(Transport):
+    def start_engine(self):
+        print("Машина заурчала двигателем")
+
+    def stop_engine(self):
+        print("Машина стоит с заглушенным двигателем")
+
+    def move(self):
+        print("Машина едет к цели назначения")
+
+    def stop(self):
+        print("Машина остановилась")
+
+
+class Electroscooter(Transport):
+    def start_engine(self):
+        print("Мигнул светодиодом")
+
+    def stop_engine(self):
+        print("Мигнул светодиодом дважды")
+
+    def move(self):
+        print("Прохожие в ужасе разбегаются от очередного камикадзе")
+
+    def stop(self):
+        print("Торможение об стену прошло успешно")
 
 
 # Отрезок кода для самопроверки.
